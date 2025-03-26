@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        <h1>Image Gallery</h1>
+        <div class="gallery">
+            
+            <div class="image" onclick="openImage('https://images.prestigeonline.com/wp-content/uploads/sites/8/2022/06/01180207/lsa-hero-2-1600x900.jpeg')">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/029/593/345/small_2x/landscape-with-moon-in-night-time-night-sky-with-stars-and-silhouettegrapher-take-on-the-mountain-generative-ai-illustration-photo.jpg" alt="Image 2">
+            </div>
+            <div class="image" onclick="openImage('https://www.rosanneflorists.com/upload/mt/ros450/upload/files/images/panels/31-local-mothers-day-2025.jpg')">
+                <img src="https://www.fnp.com/images/pr/l/v20240913124829/majestic-50-red-roses-bouquet_3.jpg" alt="Image 3">
+            </div>
+            <div class="image" onclick="openImage('https://kj1bcdn.b-cdn.net/media/89874/flower-gardening.jpg')">
+                <img src="https://images.pexels.com/photos/48207/sunset-sky-sun-cloud-48207.jpeg?cs=srgb&dl=pexels-pixabay-48207.jpg&fm=jpg" alt="Image 4">
+            </div>
+            <div class="image" onclick="openImage('https://ichef.bbci.co.uk/images/ic/480xn/p079cv0r.jpg')">
+                <img src="https://i.pinimg.com/736x/96/f6/34/96f634f7f66bf2482c13ec6c2e80e95c.jpg" alt="Image 5">
+            </div>
+            <div class="image" onclick="openImage('https://images.stockcake.com/public/1/8/9/1891bd5c-559e-4b79-9cbf-6ae1f37f8900_large/rainbow-in-sky-stockcake.jpg')">
+                <img src="https://images.stockcake.com/public/1/8/9/1891bd5c-559e-4b79-9cbf-6ae1f37f8900_large/rainbow-in-sky-stockcake.jpg" alt="Image 6">
+            </div>
+            <div class="image" onclick="openImage('https://shrihariproductions.com/wp-content/uploads/2020/07/play-school-photography-34.jpg')">
+                <img src="https://shrihariproductions.com/wp-content/uploads/2020/07/play-school-photography-34.jpg" alt="Image 7">
+            </div>
+            <div class="image" onclick="openImage('https://www.photoaspects.com/wp-content/uploads/2019/12/Depositphotos_41066325_l-2015-768x506.jpg')">
+                <img src="https://www.photoaspects.com/wp-content/uploads/2019/12/Depositphotos_41066325_l-2015-768x506.jpg" alt="Image 8">
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <span class="close-btn" onclick="closeImage()">&times;</span>
+        <img src="" id="popup-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
