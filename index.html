@@ -3,54 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Music Player</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>Vaishnavi Kulkarni</h1>
-        <p id="dynamic-text"></p>
-        <a href="your-resume.pdf" download class="btn">Download Resume</a>
+<div class="music-player">
+    <h1>My Music Player</h1>
+    <img src="music-icon.png" alt="Music Cover" class="cover-image">
+    <h2 id="song-title">Song Title</h2>
+    <p id="artist">Artist Name</p>
+    
+    <audio id="audio" src=""></audio>
+
+    <div class="controls">
+        <button onclick="prevSong()">⏮</button>
+        <button onclick="playPause()">▶️</button>
+        <button onclick="nextSong()">⏭</button>
     </div>
-</header>
 
-<section class="about">
-    <div class="container">
-        <h2>Hello! I'm Vaishnavi Kulkarni, a passionate and driven Computer Science Engineering student with a strong foundation in web development, AI/ML, and cybersecurity. My journey in tech has been fueled by continuous learning and hands-on experience through internships, hackathons, and research projects.
-
-As a Google Developer Groups (GDG) member and Cyber Security domain leader, I actively contribute to the developer community. I have successfully completed multiple certifications and internships, refining my skills in Python, Java, cybersecurity, and full-stack development. Currently, I’m working on an e-commerce store project and exploring innovative solutions in automation and cybersecurity.
-
-With a problem-solving mindset and a passion for building impactful solutions, I aspire to leverage technology to make a difference. Let’s connect and create something amazing! 🚀</h2>
-        <div class="about-content">
-            <img src="c:\Users\Admin\OneDrive\Documents\vaishnavi\Task 3\WhatsApp Image 2025-03-26 at 3.44.30 PM.jpeg" alt="Your Picture">
-            <p>
-                Hi, I'm <b>Vaishnavi</b> from <b>Karad, Satara, Maharashtra </b>. I am pursuing <b>BTech specialized in Computer Science Engineering</b>.
-                I enjoy <b>Coding</b> and love building websites with modern technologies.
-            </p>
-        </div>
+    <div class="progress-container">
+        <input type="range" id="progress-bar" value="0" step="1">
     </div>
-</section>
-
-<section class="contact">
-    <div class="container">
-        <h2>Contact Me</h2>
-        <div class="social-icons">
-            <a href="mailto:vaishnavikulkarni2099@gmail.com" target="_blank">
-                <img src="https://e7.pngegg.com/pngimages/298/243/png-clipart-email-address-computer-icons-mail-miscellaneous-angle.png" alt="Email">
-            </a>
-            <a href="https://www.linkedin.com/in/vaishnavi-kulkarni-902840299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-            </a>
-            
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2025 vaishnavi. All Rights Reserved.</p>
-</footer>
+</div>
 
 <script src="script.js"></script>
 </body>
