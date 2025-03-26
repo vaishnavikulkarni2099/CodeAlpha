@@ -1,40 +1,35 @@
-let display = document.getElementById('display');
-let historyList = document.getElementById('history-list');
+const dynamicText = document.getElementById('dynamic-text');
 
-// Append value to input
-function appendValue(value) {
-    display.value += value;
-}
+const textArray = [
+    "Web Developer",
+    "Creative Designer",
+    "Problem Solver",
+    "Freelancer"
+];
 
-// Clear the input
-function clearDisplay() {
-    display.value = '';
-}
+let textIndex = 0;
+let charIndex = 0;
 
-// Delete the last character
-function deleteLast() {
-    display.value = display.value.slice(0, -1);
-}
-
-// Calculate and show result
-function calculateResult() {
-    try {
-        let result = eval(display.value);
-        addHistory(display.value + " = " + result);
-        display.value = result;
-    } catch (error) {
-        alert("Invalid Expression");
+function typeEffect() {
+    if (charIndex < textArray[textIndex].length) {
+        dynamicText.innerHTML += textArray[textIndex][charIndex];
+        charIndex++;
+        setTimeout(typeEffect, 100);
+    } else {
+        setTimeout(eraseEffect, 1500);
     }
 }
 
-// Add to history
-function addHistory(entry) {
-    let li = document.createElement('li');
-    li.textContent = entry;
-    historyList.appendChild(li);
+function eraseEffect() {
+    if (charIndex > 0) {
+        dynamicText.innerHTML = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 50);
+    } else {
+        textIndex++;
+        if (textIndex >= textArray.length) textIndex = 0;
+        setTimeout(typeEffect, 500);
+    }
 }
 
-// Toggle Dark/Light Mode
-function toggleTheme() {
-    document.body.classList.toggle('dark');
-}
+typeEffect();

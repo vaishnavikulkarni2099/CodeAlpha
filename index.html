@@ -3,50 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Stylish Calculator</title>
+    <title>Your Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="calculator-container">
-    <div class="theme-toggle">
-        <button onclick="toggleTheme()">🌙 Dark/Light</button>
+<header>
+    <div class="container">
+        <h1>Vaishnavi Kulkarni</h1>
+        <p id="dynamic-text"></p>
+        <a href="your-resume.pdf" download class="btn">Download Resume</a>
     </div>
-    
-    <div class="calculator">
-        <h1>Advanced Calculator</h1>
-        <input type="text" id="display" disabled>
-        <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="appendValue('/')">÷</button>
-            <button onclick="appendValue('*')">×</button>
-            <button onclick="deleteLast()">⌫</button>
+</header>
 
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('-')">−</button>
+<section class="about">
+    <div class="container">
+        <h2>Hello! I'm Vaishnavi Kulkarni, a passionate and driven Computer Science Engineering student with a strong foundation in web development, AI/ML, and cybersecurity. My journey in tech has been fueled by continuous learning and hands-on experience through internships, hackathons, and research projects.
 
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="appendValue('+')">+</button>
+As a Google Developer Groups (GDG) member and Cyber Security domain leader, I actively contribute to the developer community. I have successfully completed multiple certifications and internships, refining my skills in Python, Java, cybersecurity, and full-stack development. Currently, I’m working on an e-commerce store project and exploring innovative solutions in automation and cybersecurity.
 
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="calculateResult()">=</button>
-
-            <button onclick="appendValue('0')" class="zero-btn">0</button>
-            <button onclick="appendValue('.')">.</button>
+With a problem-solving mindset and a passion for building impactful solutions, I aspire to leverage technology to make a difference. Let’s connect and create something amazing! 🚀</h2>
+        <div class="about-content">
+            <img src="c:\Users\Admin\OneDrive\Documents\vaishnavi\Task 3\WhatsApp Image 2025-03-26 at 3.44.30 PM.jpeg" alt="Your Picture">
+            <p>
+                Hi, I'm <b>Vaishnavi</b> from <b>Karad, Satara, Maharashtra </b>. I am pursuing <b>BTech specialized in Computer Science Engineering</b>.
+                I enjoy <b>Coding</b> and love building websites with modern technologies.
+            </p>
         </div>
     </div>
+</section>
 
-    <div class="history">
-        <h2>Calculation History</h2>
-        <ul id="history-list"></ul>
+<section class="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <div class="social-icons">
+            <a href="mailto:vaishnavikulkarni2099@gmail.com" target="_blank">
+                <img src="https://e7.pngegg.com/pngimages/298/243/png-clipart-email-address-computer-icons-mail-miscellaneous-angle.png" alt="Email">
+            </a>
+            <a href="https://www.linkedin.com/in/vaishnavi-kulkarni-902840299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            
+        </div>
     </div>
-</div>
+</section>
+
+<footer>
+    <p>© 2025 vaishnavi. All Rights Reserved.</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
