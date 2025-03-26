@@ -1,35 +1,65 @@
-const dynamicText = document.getElementById('dynamic-text');
+const audio = document.getElementById('audio');
+const songTitle = document.getElementById('song-title');
+const artist = document.getElementById('artist');
+const progressBar = document.getElementById('progress-bar');
+const playPauseBtn = document.querySelector('.controls button:nth-child(2)');
 
-const textArray = [
-    "Web Developer",
-    "Creative Designer",
-    "Problem Solver",
-    "Freelancer"
+const songs = [
+    {
+        title: 'Song 1',
+        artist: 'Artist 1',
+        src: 'c:\Users\Admin\Music\Kesariya(PagalWorld.com.se).mp3'
+    },
+    {
+        title: 'Song 2',
+        artist: 'Artist 2',
+        src: 'c:\Users\Admin\Music\Teri Baaton Mein Aisa Uljha Jiya(PagalWorld.com.cm).mp3'
+    },
+    {
+        title: 'Song 3',
+        artist: 'Artist 3',
+        src: 'c:\Users\Admin\Music\Tu Chahiye.mp3'
+    }
 ];
 
-let textIndex = 0;
-let charIndex = 0;
+let currentSongIndex = 0;
 
-function typeEffect() {
-    if (charIndex < textArray[textIndex].length) {
-        dynamicText.innerHTML += textArray[textIndex][charIndex];
-        charIndex++;
-        setTimeout(typeEffect, 100);
+function loadSong(index) {
+    const song = songs[index];
+    songTitle.textContent = song.title;
+    artist.textContent = song.artist;
+    audio.src = song.src;
+}
+
+function playPause() {
+    if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = '⏸';
     } else {
-        setTimeout(eraseEffect, 1500);
+        audio.pause();
+        playPauseBtn.textContent = '▶️';
     }
 }
 
-function eraseEffect() {
-    if (charIndex > 0) {
-        dynamicText.innerHTML = textArray[textIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(eraseEffect, 50);
-    } else {
-        textIndex++;
-        if (textIndex >= textArray.length) textIndex = 0;
-        setTimeout(typeEffect, 500);
-    }
+function prevSong() {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    loadSong(currentSongIndex);
+    audio.play();
 }
 
-typeEffect();
+function nextSong() {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    loadSong(currentSongIndex);
+    audio.play();
+}
+
+audio.addEventListener('timeupdate', () => {
+    progressBar.value = (audio.currentTime / audio.duration) * 100;
+});
+
+progressBar.addEventListener('input', () => {
+    audio.currentTime = (progressBar.value / 100) * audio.duration;
+});
+
+// Load the first song initially
+loadSong(currentSongIndex);
